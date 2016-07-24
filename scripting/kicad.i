@@ -34,6 +34,15 @@
 %include <std_shared_ptr.i>
 
 /*
+Wrappers around int* and double*. These are generally only needed when input &
+output parameters have not been marked properly.
+(See http://www.swig.org/Doc3.0/Arguments.html#Arguments_nn2)
+*/
+%include <cpointer.i>
+%pointer_class(int,intp);
+%pointer_class(double,doublep);
+
+/*
 http://www.swig.org/Doc3.0/CPlusPlus11.html
 7.3.3 Hash tables
 
