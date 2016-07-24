@@ -86,6 +86,13 @@ class BASE_SET {};
 
 // this is what it must be included in the wrapper .cxx code to compile
 
+%include <typemaps.i>
+
+/* Add MarkTrace's output parameters. */
+%apply int *OUTPUT { int* aCount };
+%apply double *OUTPUT { double* aTraceLength };
+%apply double *OUTPUT { double* aInPackageLength };
+
 %{
   #include <wx_python_helpers.h>
   #include <class_board_item.h>
